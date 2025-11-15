@@ -1,7 +1,9 @@
 from sqlite3 import Connection
 
+from src.interfaces.user_repository_interface import IUserRepository
 
-class UserRepository:
+
+class UserRepository(IUserRepository):
     def __init__(self, connection: Connection) -> None:
         self.__connection = connection
 
@@ -31,7 +33,7 @@ class UserRepository:
 
         self.__connection.commit()
 
-    def get_user_by_username(self, username: str):
+    def get_user_by_username(self, username: str) -> tuple[int, str, str]:
         cursor = self.__connection.cursor()
         cursor.execute(
             """
