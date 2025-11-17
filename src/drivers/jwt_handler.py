@@ -6,7 +6,7 @@ from src.configs.jwt_config import jwt_infos
 
 
 class JWTHandler:
-    def create_token(self, body: dict = {}) -> str:
+    def create_token(self, body: dict) -> str:
         token = jwt.encode(
             payload={
                 "exp": datetime.now(timezone.utc)
@@ -19,8 +19,8 @@ class JWTHandler:
         return token
 
     def decode_token(self, token: str) -> dict:
-        token_info = jwt.decode(
+        token_information = jwt.decode(
             token, key=jwt_infos["KEY"], algorithms=jwt_infos["ALGORITHM"]
         )
 
-        return token_info
+        return token_information
