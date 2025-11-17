@@ -3,3 +3,4 @@
 .pytest_cahce
 storage.db
 venv
+.env

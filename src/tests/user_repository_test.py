@@ -1,7 +1,6 @@
 from unittest.mock import Mock
 
 from ..dados.repositories.user_repository import UserRepository
-from ..infraestrutura.database import db_connection_handler
 
 
 class MockCursor:
