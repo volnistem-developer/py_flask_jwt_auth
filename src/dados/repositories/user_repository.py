@@ -33,7 +33,7 @@ class UserRepository(IUserRepository):
 
         self.__connection.commit()
 
-    def get_user_by_username(self, username: str) -> tuple[int, str, str]:
+    def get_user_by_username(self, username: str) -> tuple[int, str, bytes]:
         cursor = self.__connection.cursor()
         cursor.execute(
             """
