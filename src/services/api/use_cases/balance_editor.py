@@ -1,7 +1,7 @@
 from src.interfaces.user_repository_interface import IUserRepository
 
 
-class BalanceEditor:
+class BalanceEditorUseCase:
     def __init__(self, repository: IUserRepository) -> None:
         self.__repository = repository
 
